@@ -16,7 +16,7 @@ It provides separate dashboards for Admin and User roles to manage books, author
 | -------------- | --------------------------------------------- |
 | **Backend**    | Spring Boot, Spring Security, Spring Data JPA |
 | **Frontend**   | Thymeleaf, HTML, CSS                          |
-| **Database**   | MySQL (or H2 for testing)                     |
+| **Database**   | MySQL                     |
 | **Build Tool** | Maven                                         |
 
 
