@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+    <link rel="stylesheet" th:href="@{/css/style_book.css}">
+</
+</head>
+<body>
+
+<h2>Books</h2>
+<a th:href="@{/admin/dashboard}">Back</a> | <a th:href="@{/logout}">Logout</a>
+<h3>Add Author</h3>
+<form th:action="@{/admin/authors/add}" method="post">
+    <input type="text" name="name" placeholder="Author name" required/>
+    <button type="submit">Add</button>
+</form>
+<h3>Add Category</h3>
+<form th:action="@{/admin/categories/add}" method="post">
+    <input type="text" name="name" placeholder="Category name" required/>
+    <button type="submit">Add</button>
+</form>
+<h3>Add Book</h3>
+<form th:action="@{/admin/books/add}" method="post">
+    <input type="text" name="title" placeholder="Title" required/>
+    <select name="authorId" required>
+        <option th:each="a : ${authors}" th:value="${a.id}" th:text="${a.name}"></option>
+    </select>
+    <select name="categoryId" required>
+        <option th:each="c : ${categories}" th:value="${c.id}" th:text="${c.name}"></option>
+    </select>
+    <button type="submit">Add Book</button>
+</form>
+<h3>Existing Books</h3>
+<table border="1">
+    <tr><th>ID</th><th>Title</th><th>Author</th><th>Category</th><th>Borrowed</th><th>Action</th></tr>
+    <tr th:each="b : ${books}">
+        <td th:text="${b.id}"></td>
+        <td th:text="${b.title}"></td>
+        <td th:text="${b.author != null ? b.author.name : 'N/A'}"></td>
+        <td th:text="${b.category != null ? b.category.name : 'N/A'}"></td>
+        <td th:text="${b.borrowed}"></td>
+        <td>
+            <form th:action="@{/admin/books/delete}" method="get" style="display:inline">
+                <input type="hidden" name="id" th:value="${b.id}"/>
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

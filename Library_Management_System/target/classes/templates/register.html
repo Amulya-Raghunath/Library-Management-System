@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" th:href="@{/css/style_register.css}">
+
+</head>
+<body style="background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80');">
+<h1>Register</h1>
+
+<form th:action="@{/register}" th:object="${user}" method="post">
+    <label>Name
+        <input type="text" th:field="*{name}" placeholder="Full Name" required>
+    </label>
+
+    <label>Username
+        <input type="text" th:field="*{username}" placeholder="Username" required>
+    </label>
+
+    <label>Password
+        <input type="password" th:field="*{password}" placeholder="Password" required>
+    </label>
+
+    <label>Role
+        <select th:field="*{role}">
+            <option value="ADMIN">Admin</option>
+            <option value="USER">User</option>
+        </select>
+    </label>
+
+    <button type="submit">Register</button>
+</form>
+
+</body>
+</html>

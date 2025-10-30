@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body style="background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80');">
+<div class="welcome">
+    <h1>Welcome!</h1>
+</div>
+<form th:action="@{/user/search}" method="get" >
+    <input type="text" name="query" class="form-control me-2" placeholder="Search by title, author, or category"
+           th:value="${searchQuery}">
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+<div th:if="${#lists.isEmpty(books)}" class="alert alert-warning mt-3">
+    No books found matching your search criteria.
+</div>
+
+<a th:href="@{/logout}">Logout</a>
+<h3>Available Books</h3>
+<table border="1">
+    <tr><th>ID</th><th>Title</th><th>Author</th><th>Category</th><th>Borrowed</th><th>Action</th></tr>
+    <tr th:each="b : ${books}">
+        <td th:text="${b.id}"></td>
+        <td th:text="${b.title}"></td>
+        <td th:text="${b.author != null ? b.author.name : 'N/A'}"></td>
+        <td th:text="${b.category != null ? b.category.name : 'N/A'}"></td>
+        <td th:text="${b.borrowed}"></td>
+        <td>
+            <form th:action="@{/user/borrow}" method="post" style="display:inline" th:if="${!b.borrowed}">
+                <input type="hidden" name="bookId" th:value="${b.id}"/>
+                <button type="submit">Borrow</button>
+            </form>
+            <span th:if="${b.borrowed}">Not available</span>
+        </td>
+    </tr>
+</table>
+
+<h3>Your Active Borrows</h3>
+<table border="1">
+    <tr><th>Record ID</th><th>Book</th><th>Borrow Date</th><th>Due Date</th><th>Action</th></tr>
+    <tr th:each="r : ${borrows}">
+        <td th:text="${r.id}"></td>
+        <td th:text="${r.book.title}"></td>
+        <td th:text="${r.borrowDate}"></td>
+        <td th:text="${r.dueDate}"></td>
+        <td>
+            <form th:action="@{/user/return}" method="post">
+                <input type="hidden" name="recordId" th:value="${r.id}"/>
+                <button type="submit">Return</button>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

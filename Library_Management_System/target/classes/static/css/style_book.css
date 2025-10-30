@@ -1,0 +1,56 @@
+body
+        {
+        background-image:url('https://images.unsplash.com/photo-1516979187457-637abb4f9353');
+        background-size: cover;
+            font-family: Arial, sans-serif;
+            text-align:center;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ffd54f;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+
+        }
+        button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ffd54f;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+
+        }
+         table {
+    border: 3px solid #333;      /* 🔹 Change thickness & color */
+    border-collapse: collapse;   /* 🔹 Removes double borders */
+    width: 80%;                  /* Optional: table width */
+    margin: 20px auto;           /* Centers the table */
+}
+
+th, td {
+    border: 2px solid #555;      /* 🔹 Border for each cell */
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #ffd54f;   /* 🔹 Header background */
+    color: black;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+body
+        {
+        text-align:center;
+        }

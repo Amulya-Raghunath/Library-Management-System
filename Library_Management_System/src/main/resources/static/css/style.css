@@ -1,0 +1,74 @@
+.button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ffd54f;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+
+        }
+        body {
+
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align:center;
+        }
+
+        h1 {
+            text-align: center;
+            color: yellow;
+            margin-top: 40px;
+        }
+         .welcome {
+                    text-align: center;
+                    margin-top: 50px;
+                    font-size: 24px;
+                    color: #333;
+                    }
+          button {
+                     display: inline-block;
+                     padding: 10px 20px;
+                     background: #ffd54f;
+                     color: black;
+                     border: none;
+                     border-radius: 5px;
+                     font-weight: bold;
+                     cursor: pointer;
+                     text-align: center;
+
+                 }
+                 input, select {
+
+             padding: 10px;
+             border: 1px solid #ccc;
+             border-radius: 5px;
+             font-size: 16px;
+         }
+                 table {
+             border: 3px solid #333;      /* 🔹 Change thickness & color */
+             border-collapse: collapse;   /* 🔹 Removes double borders */
+             width: 80%;                  /* Optional: table width */
+             margin: 20px auto;           /* Centers the table */
+         }
+
+         th, td {
+             border: 2px solid #555;      /* 🔹 Border for each cell */
+             padding: 5px;
+             text-align: center;
+         }
+
+         th {
+             background-color: #ffd54f;   /* 🔹 Header background */
+             color: black;
+         }
+
+         td {
+             background-color: #f9f9f9;
+         }

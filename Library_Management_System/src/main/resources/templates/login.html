@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/style_login.css}">
+</head>
+<body style="background-image: url('https://images.unsplash.com/photo-1463143296037-46790ff95a7e');">
+<h1><i>Welcome to the Book World</i></h1>
+
+<form th:action="@{/login}" method="post">
+    <label>Username:</label>
+    <input type="text" name="username" placeholder="Username" required>
+
+    <label>Password:</label>
+    <input type="password" name="password" placeholder="Password" required>
+
+    <input type="submit" value="Login">
+</form>
+
+<div class="register-link">
+    <a th:href="@{/register}">Register</a>
+</div>
+</body>
+</html>

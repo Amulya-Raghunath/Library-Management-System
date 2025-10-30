@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body style="background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1600&q=80')">
+<h1>Welcome Admin</h1>
+<a th:href="@{/admin/books}" class="button">Manage Books</a> |
+<a th:href="@{/logout}" class="button">Logout</a>
+</body>
+</html>
