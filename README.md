@@ -5,23 +5,21 @@ It provides separate dashboards for Admin and User roles to manage books, author
 🚀 Features
 
 🔐 Authentication & Authorization — Secure login and registration using Spring Security.
-
 📚 Book Management — Admin can add, update, delete, and view books.
-
 👩‍💼 Admin Dashboard — Manage books, authors, categories, and users.
-
 👤 User Dashboard — Browse books and track borrowed records.
-
 🧾 Borrowing Records — Record and manage book borrow/return operations.
-
 🎨 Thymeleaf Templates — Responsive HTML & CSS frontend design.
-
 🧩 Tech Stack
-Layer	Technologies
-Backend	Spring Boot, Spring Security, Spring Data JPA
-Frontend	Thymeleaf, HTML, CSS
-Database	MySQL (or H2 for testing)
-Build Tool	Maven
+
+| Layer          | Technologies                                  |
+| -------------- | --------------------------------------------- |
+| **Backend**    | Spring Boot, Spring Security, Spring Data JPA |
+| **Frontend**   | Thymeleaf, HTML, CSS                          |
+| **Database**   | MySQL (or H2 for testing)                     |
+| **Build Tool** | Maven                                         |
+
+
 📂 Project Structure
 com.example.library
 ├── config
