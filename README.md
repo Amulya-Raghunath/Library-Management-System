@@ -20,7 +20,6 @@ It provides separate dashboards for Admin and User roles to manage books, author
 | **Build Tool** | Maven                                         |
 
 
-📂 Project Structure
 com.example.library
 ├── config
 │   └── SecurityConfig.java
